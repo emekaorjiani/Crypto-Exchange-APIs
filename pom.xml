@@ -7,6 +7,7 @@
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>
+        <version.jackson>2.9.3</version.jackson>
         <version.jdk>1.8</version.jdk>
         <version.junit>5.0.3</version.junit>
         <version.log4j>2.9.1</version.log4j>
@@ -14,6 +15,23 @@
     </properties>
 
     <dependencies>
+        <!-- JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${version.jackson}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${version.jackson}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${version.jackson}</version>
+        </dependency>
+
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
