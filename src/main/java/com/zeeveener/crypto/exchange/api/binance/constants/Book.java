@@ -1,5 +1,9 @@
 package com.zeeveener.crypto.exchange.api.binance.constants;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * Represents a combination of {@link Currency}s that can be traded for eachother.
  * <br/><br/>
@@ -278,5 +282,17 @@ public enum Book {
 
     public String toRequestFormat() {
         return this.getMajor().toString() + this.getMinor().toString();
+    }
+
+    public static List<Book> forMinorCurrency(final Currency minor) {
+        return Arrays.stream(Book.values())
+                .filter(book -> book.getMinor().equals(minor))
+                .collect(Collectors.toList());
+    }
+
+    public static List<Book> forMajorCurrency(final Currency major) {
+        return Arrays.stream(Book.values())
+                .filter(book -> book.getMajor().equals(major))
+                .collect(Collectors.toList());
     }
 }
