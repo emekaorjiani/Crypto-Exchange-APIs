@@ -5,6 +5,8 @@ import java.util.Optional;
 
 /**
  * All currencies listed at the Binance Exchange.
+ *
+ * @author Zac Beemer
  */
 public enum Currency {
     ADA("Cardano"),
@@ -108,7 +110,7 @@ public enum Currency {
     WAVES("Waves"),
     WINGS("WINGS"),
     WTC("Walton"),
-    XML("Stellar Lumens"),
+    XLM("Stellar Lumens"),
     XMR("Monero"),
     XRP("Ripple"),
     XVG("Verge"),
