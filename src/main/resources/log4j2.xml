@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration monitorInterval="15" status="INFO" strict="true">
+    <Properties>
+        <Property name="filename">logs/crypto-exchange-apis.log</Property>
+    </Properties>
+    <Appenders>
+        <Appender type="Console" name="Console">
+            <Layout type="PatternLayout" pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Appender>
+        <Appender type="Console" name="SuperDebug">
+            <Layout type="PatternLayout" pattern="%C{1}.%M %m %ex%n"/>
+        </Appender>
+        <Appender type="File" name="File" fileName="${filename}" immediateFlush="false" append="false">
+            <Layout type="PatternLayout" pattern="%d{yyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Appender>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <Appender ref="Console"/>
+            <Appender ref="File"/>
+            <!--<Appender ref="SuperDebug"/>-->
+        </Root>
+    </Loggers>
+</Configuration>
